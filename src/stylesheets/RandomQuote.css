@@ -1,0 +1,25 @@
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yellow-rectangle {
+  min-width: 8px;
+  height: 301px;
+  background: #f7df94;
+  margin-right: 50px;
+}
+
+.random-quote {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 120%;
+}
+
+.author {
+  margin-top: 50px;
+  margin-left: 50px;
+}
