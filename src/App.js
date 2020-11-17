@@ -7,13 +7,14 @@ import axios from "axios";
 class App extends Component {
   state = {
     randomQuote: "",
+    authorQuotes: [],
   };
 
   componentDidMount() {
     this.getRandomQuote();
   }
 
-  getRandomQuote() {
+  getRandomQuote = () => {
     axios
       .get("https://quote-garden.herokuapp.com/api/v2/quotes/random")
       .then((apiRes) => {
@@ -24,8 +25,19 @@ class App extends Component {
       .catch((err) => console.log(err));
   }
 
-  getAuthorQuotes(name) {
+  getAuthorQuotes = (name) => {
     console.log("get author quotes:", name);
+    axios
+      .get(
+        `https://quote-garden.herokuapp.com/api/v2/authors/${name}?page=1&limit=10`
+      )
+      .then((apiRes) => {
+        this.setState({
+          authorQuotes: apiRes.data.quotes,
+        });
+        console.log(this.state.authorQuotes)
+      })
+      .catch((err) => console.log(err));
   }
 
   render() {
