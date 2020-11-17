@@ -1,20 +1,21 @@
 import React from "react";
 import "../stylesheets/RandomQuote.css";
 
-const RandomQuote = () => {
+const RandomQuote = (props) => {
   return (
     <>
       <div className="center-container">
         <div className="yellow-rectangle"></div>
         <div className="random-quote">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam a
-          dolore et pariatur dicta fugit incidunt magnam repellendus fuga veniam
-          dolorum sit ab, repellat corrupti quasi! Dignissimos illo minus cum!
+          {props.quote ? props.quote : "loading quote..."}
         </div>
       </div>
-      <div className="author">
-        <h3>Author</h3>
-        <p>category</p>
+      <div className="author" onClick={() => props.authorQuotes(props.author)}>
+        <div>
+          <h3>{props.author}</h3>
+          <p>{props.genre}</p>
+        </div>
+         <i className="material-icons">arrow_right_alt</i>
       </div>
     </>
   );

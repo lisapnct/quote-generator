@@ -15,11 +15,25 @@
   font-family: Raleway;
   font-style: normal;
   font-weight: 500;
-  font-size: 36px;
+  font-size: 34px;
   line-height: 120%;
 }
 
 .author {
+  padding: 20px 0px 20px 50px;
   margin-top: 50px;
-  margin-left: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author > i {
+  color: white;
+  margin-right: 50px;
+}
+
+.author:hover {
+  background: #333333;
+  color: white;
 }
