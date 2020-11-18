@@ -38,7 +38,7 @@
 
 ![quote-generator-screenshot.png](quote-generator-screenshot.png)
 
-I built this simple quote generator to practice using React and displaying data from an API. Try it here: 
+I built this simple quote generator to practice using React and displaying data from an API. Try it [here](https://quote-generator-lp.herokuapp.com/) 
 
 
 ### Built With
