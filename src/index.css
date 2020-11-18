@@ -1,13 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
 body {
   margin: 0;
   font-family: Raleway;
   max-height: 100vh;
   max-width: 100vw;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 a {
