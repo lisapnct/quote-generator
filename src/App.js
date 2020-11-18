@@ -23,10 +23,9 @@ class App extends Component {
         });
       })
       .catch((err) => console.log(err));
-  }
+  };
 
   getAuthorQuotes = (name) => {
-    console.log("get author quotes:", name);
     axios
       .get(
         `https://quote-garden.herokuapp.com/api/v2/authors/${name}?page=1&limit=10`
@@ -35,10 +34,9 @@ class App extends Component {
         this.setState({
           authorQuotes: apiRes.data.quotes,
         });
-        console.log(this.state.authorQuotes)
       })
       .catch((err) => console.log(err));
-  }
+  };
 
   render() {
     const random = this.state.randomQuote;

@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 800px;
 }
 
 .yellow-rectangle {
@@ -17,6 +18,7 @@
   font-weight: 500;
   font-size: 34px;
   line-height: 120%;
+  min-width: 800px;
 }
 
 .author {
@@ -26,11 +28,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-width: 800px;
 }
 
 .author > i {
   color: white;
   margin-right: 50px;
+  font-size: 50px;
 }
 
 .author:hover {

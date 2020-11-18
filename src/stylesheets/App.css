@@ -1,14 +1,14 @@
 .App {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  align-items: center;
 }
 
 footer {
-  width: 95vw;
-  text-align: end;
+  text-align: center;
   font-size: 14px;
   line-height: 17px;
   color: #a9a9a9;
+  margin-top: 60px;
 }
 
