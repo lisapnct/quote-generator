@@ -33,6 +33,7 @@ class App extends Component {
         `https://quote-garden.herokuapp.com/api/v2/authors/${name}?page=1&limit=10`
       )
       .then((apiRes) => {
+        console.log(apiRes);
         this.setState({
           authorQuotes: apiRes.data.quotes,
         });
@@ -44,9 +45,9 @@ class App extends Component {
     const random = this.state.randomQuote;
     return (
       <>
+        <Navbar randomize={this.getRandomQuote} />
         <Switch>
           <Route exact path="/">
-            <Navbar randomize={this.getRandomQuote} />
             <div className="App">
               <RandomQuote
                 quote={random.quoteText}
@@ -57,7 +58,11 @@ class App extends Component {
             </div>
           </Route>
           <Route path="/author/:name">
-            <AuthorQuotes author={random.quoteAuthor} quotes={this.state.authorQuotes}/>
+            <AuthorQuotes
+              getQuotes={this.getAuthorQuotes}
+              author={random.quoteAuthor}
+              quotes={this.state.authorQuotes}
+            />
           </Route>
         </Switch>
         <footer>Lisa Poncet @ Devchallenges.io</footer>

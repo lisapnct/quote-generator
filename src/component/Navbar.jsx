@@ -1,12 +1,13 @@
 import React from "react";
 import "../stylesheets/Navbar.css";
+import {Link} from "react-router-dom"
 
 const Navbar = (props) => {
   return (
     <nav className="navbar">
-      <a href="/" onClick={() => props.randomize()}>
-        random
-      </a>
+      <Link to="/" onClick={() => props.randomize()}>
+        random quote 
+      </Link>
        <i className="material-icons">cached</i>
     </nav>
   );
