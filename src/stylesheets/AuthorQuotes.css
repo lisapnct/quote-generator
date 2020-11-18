@@ -1,0 +1,20 @@
+.quotes-container {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 800px;
+}
+
+.quotes-container h1 {
+    margin-bottom: 60px;
+}
+
+.quote-container {
+  display: flex;
+  margin-bottom: 60px;
+  max-width: 800px;
+  font-size: 34px;
+  align-items: center;
+}

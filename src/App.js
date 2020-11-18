@@ -2,7 +2,9 @@ import "./stylesheets/App.css";
 import RandomQuote from "./component/RandomQuote";
 import Navbar from "./component/Navbar";
 import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
 import axios from "axios";
+import AuthorQuotes from "./component/AuthorQuotes";
 
 class App extends Component {
   state = {
@@ -42,16 +44,23 @@ class App extends Component {
     const random = this.state.randomQuote;
     return (
       <>
-        <Navbar randomize={this.getRandomQuote} />
-        <div className="App">
-          <RandomQuote
-            quote={random.quoteText}
-            author={random.quoteAuthor}
-            genre={random.quoteGenre}
-            authorQuotes={this.getAuthorQuotes}
-          />
-        </div>
-        <footer>Created by Lisa Poncet</footer>
+        <Switch>
+          <Route exact path="/">
+            <Navbar randomize={this.getRandomQuote} />
+            <div className="App">
+              <RandomQuote
+                quote={random.quoteText}
+                author={random.quoteAuthor}
+                genre={random.quoteGenre}
+                authorQuotes={this.getAuthorQuotes}
+              />
+            </div>
+          </Route>
+          <Route path="/author/:name">
+            <AuthorQuotes author={random.quoteAuthor} quotes={this.state.authorQuotes}/>
+          </Route>
+        </Switch>
+        <footer>Lisa Poncet @ Devchallenges.io</footer>
       </>
     );
   }
