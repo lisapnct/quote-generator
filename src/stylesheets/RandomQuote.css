@@ -6,9 +6,9 @@
 
 .yellow-rectangle {
   min-width: 8px;
-  height: 301px;
+  min-height: 300px;
   background: #f7df94;
-  margin-right: 50px;
+  margin-right: 60px;
 }
 
 .random-quote {
@@ -19,7 +19,7 @@
 
 .author {
   padding: 20px 0px 20px 50px;
-  margin-top: 50px;
+  margin-top: 60px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -36,4 +36,26 @@
 .author:hover {
   background: #333333;
   color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .center-container {
+    max-width: 320px;
+  }
+  
+  .author {
+    min-width: 280px;
+  }
+
+  .author > i {
+    font-size: 30px;
+  }
+
+  .yellow-rectangle {
+    margin-right: 40px;
+  }
+
+  .random-quote {
+    font-size: 24px;
+  }
 }
