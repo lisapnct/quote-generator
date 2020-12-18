@@ -32,7 +32,7 @@ const App = () => {
       .catch((err) => console.log(err));
   };
 
-  const random = randomQuote;
+  const { quoteText, quoteAuthor, quoteGenre } = randomQuote;
   return (
     <>
       <Navbar randomize={getRandomQuote} />
@@ -40,9 +40,9 @@ const App = () => {
         <Route exact path="/">
           <div className="App">
             <RandomQuote
-              quote={random.quoteText}
-              author={random.quoteAuthor}
-              genre={random.quoteGenre}
+              quote={quoteText}
+              author={quoteAuthor}
+              genre={quoteGenre}
               authorQuotes={getAuthorQuotes}
             />
           </div>
@@ -50,7 +50,7 @@ const App = () => {
         <Route path="/author/:name">
           <AuthorQuotes
             getQuotes={getAuthorQuotes}
-            author={random.quoteAuthor}
+            author={quoteAuthor}
             quotes={authorQuotes}
           />
         </Route>
