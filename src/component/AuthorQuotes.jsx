@@ -3,8 +3,7 @@ import "../stylesheets/AuthorQuotes.css";
 
 class AuthorQuotes extends React.Component {
   componentDidMount() {
-    console.log(this.props.author);
-    this.props.getQuotes();
+    this.props.getQuotes(this.props.author);
   }
 
   render() {

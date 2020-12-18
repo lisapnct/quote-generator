@@ -18,10 +18,10 @@ class App extends Component {
 
   getRandomQuote = () => {
     axios
-      .get("https://quote-garden.herokuapp.com/api/v2/quotes/random")
+      .get("https://quote-garden.herokuapp.com/api/v3/quotes/random")
       .then((apiRes) => {
         this.setState({
-          randomQuote: apiRes.data.quote,
+          randomQuote: apiRes.data.data[0],
         });
       })
       .catch((err) => console.log(err));
@@ -29,13 +29,10 @@ class App extends Component {
 
   getAuthorQuotes = (name) => {
     axios
-      .get(
-        `https://quote-garden.herokuapp.com/api/v2/authors/${name}?page=1&limit=10`
-      )
+      .get(`https://quote-garden.herokuapp.com/api/v3/quotes?author=${name}`)
       .then((apiRes) => {
-        console.log(apiRes);
         this.setState({
-          authorQuotes: apiRes.data.quotes,
+          authorQuotes: apiRes.data.data,
         });
       })
       .catch((err) => console.log(err));
